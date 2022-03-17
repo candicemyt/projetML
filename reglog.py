@@ -31,6 +31,10 @@ class Linear(Module):
         super().__init__()
         self.input=input
         self.output=output
+        #on initialise la matrice de poids
+        self._parameters = 2 * ( np.random.rand(self.input, self.output) - 0.5 )
+        #on met le gradient à 0
+        self.zero_grad()
     def forward(self, X):
         """ Calcule la passe forward
                 input : X est de taille batch*input
