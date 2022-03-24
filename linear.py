@@ -61,6 +61,7 @@ class Linear(Module):
             en fonction de l’entrée input et des δ de la couche suivante delta
                 input : input est de taille batch*input
                         delta est de taille batch*output
+                output : input*output
         """
         assert input.shape[0] == delta.shape[0]
         assert input.shape[1] == self.input
