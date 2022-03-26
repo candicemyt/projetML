@@ -84,15 +84,3 @@ class Linear(Module):
         assert res.shape[1] == self.input
         return res
 
-def descente_gradient(datax,datay,f_loss,f_grad,eps,iter):
-    n, d = np.shape(datax)
-    w = np.array([-2,-2])
-    allw = [w]
-    val_mse = [f_loss(w, datax, datay)]
-
-    for i in range(iter):
-        w = w - eps*np.mean(f_grad(w, datax, datay))
-        allw.append(w)
-        val_mse.append(f_loss(w, datax, datay))
-    return w, allw, val_mse
-
