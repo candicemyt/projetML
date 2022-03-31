@@ -12,9 +12,10 @@ class MSELoss(Loss):
                     yhat est de taille batch*d
             output : res est de taille batch
         """
-        assert y.shape == yhat.shape
+        #assert y.shape[0] == yhat.shape[0]
         res = np.linalg.norm(y-yhat, axis=1) ** 2
-        assert len(res) == y.shape[0]
+        print(res)
+        #assert res.shape[0] == y.shape[0]
         return res
 
     def backward(self, y, yhat):
@@ -23,9 +24,7 @@ class MSELoss(Loss):
                         yhat est de taille batch*d
                 output : res est de taille batch*d
         """
-        assert y.shape == yhat.shape
         res = 2 * (y-yhat)
-        assert res.shape == y.shape
         return res
 
 class Linear(Module):
@@ -48,13 +47,16 @@ class Linear(Module):
                 input : X est de taille batch*input
                 output : res est de taille batch*output
         """
-        assert X.shape[1] == self.input
+        #assert X.shape[1] == self.input
+        #X.reshape(self.input,-1)
+        print(X.shape)
+        print(self._parameters.shape)
         res = X @ self._parameters
-        assert res.shape[1] == self.output
-        assert X.shape[0] == res.shape[0]
+        #assert res.shape[1] == self.output
+        #assert X.shape[0] == res.shape[0]
         return res
 
-    def backward_update_gradient(self, input, delta):
+    def backward_update_gradient(self, _input, delta):
         """ Met a jour la valeur du gradient
             Calcule le gradient du coût par rapport aux paramètres
             et l’additionne à la variable _gradient
@@ -63,10 +65,23 @@ class Linear(Module):
                         delta est de taille batch*output
                 output : input*output
         """
-        assert input.shape[0] == delta.shape[0]
-        assert input.shape[1] == self.input
-        assert delta.shape[1] == self.output
-        self._gradient += input.T @ delta
+        #assert input.shape[0] == delta.shape[0]
+        #assert input.shape[1] == self.input
+        #assert delta.shape[1] == self.output
+        """print('input', input)
+        for i in input.T:
+            mat = i
+            print('une data de input', i)
+            print('output', self.output)
+            for j in range(self.output -1):
+                mat = np.hstack((mat, i.T))
+                print('evolution', mat)
+            print('mat', mat.shape, mat, 'delta', delta.shape, delta)
+            tmp = mat @ delta
+            print('gradient', self._gradient)
+            self._gradient += tmp"""
+        self._gradient += _input @ delta
+
 
     def backward_delta(self, input, delta):
         """ Calcule la derivee de l'erreur
@@ -76,11 +91,11 @@ class Linear(Module):
                         delta est de taille batch*output
                 output : res est de taille batch*input
         """
-        assert input.shape[0] == delta.shape[0]
-        assert input.shape[1] == self.input
-        assert delta.shape[1] == self.output
+        #assert input.shape[0] == delta.shape[0]
+        #assert input.shape[1] == self.input
+        #assert delta.shape[1] == self.output
         res = delta @ (self._parameters.T)
-        assert res.shape[0] == input.shape[0]
-        assert res.shape[1] == self.input
+        #assert res.shape[0] == input.shape[0]
+        #assert res.shape[1] == self.input
         return res
 
