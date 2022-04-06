@@ -3,29 +3,22 @@ import numpy as np
 from mltools import plot_data, plot_frontiere, make_grid, gen_arti
 import matplotlib.pyplot as plt
 
-#test de l'implémentation en réalisant une boucle d'apprentissage par descente de gradient
-datax = np.array([1.,2.,1.,0.])
-datay = np.array([1.,0.,1.])
+#test de l'implémentation avec descente de gradient
+datax = np.random.random(size=(10,4))
+datay = np.random.randint(0,2, (10,))
 
 mse = MSELoss()
-linear = Linear(datax.shape[0],2)
+linear = Linear(datax.shape[1],1)
 
-allw = [linear._parameters]
 val_mse = []
-for i in range(10):
-    res_lin = linear.forward(datax)
-    print(res_lin.shape)
-    print(datay.shape)
-    val_mse.append(mse.forward(datay, res_lin).mean())
-    delta_mse = mse.backward(datay, res_lin)
-    linear.zero_grad()
-    linear.backward_update_gradient(datax, delta_mse)
-    grad_lin = linear._gradient
-    delta_lin = linear.backward_delta(datax, delta_mse)
-    linear.update_parameters()
-    allw.append(linear._parameters.copy())
-w=linear._parameters
-
+for i in range(100):
+     output = linear.forward(datax)
+     loss = mse.forward(output, datay).mean()
+     val_mse.append(loss)
+     delta_mse = mse.backward(output, datay)
+     linear.zero_grad()
+     linear.backward_update_gradient(datax, delta_mse)
+     linear.update_parameters(gradient_step=1e-2)
 
 plt.plot(val_mse)
 plt.show()
