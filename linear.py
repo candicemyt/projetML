@@ -22,7 +22,7 @@ class Linear(Module):
             entrée : X -> batch*input
             sortie : res -> batch*output
         """
-        print('X' ,X)
+
         assert X.shape[1] == self.input
 
         return X @ self._parameters
@@ -37,7 +37,6 @@ class Linear(Module):
                 sortie : input*output
         """
         assert _input.shape[0] == delta.shape[0]
-
         self._gradient += _input.T @ delta
 
 

@@ -22,5 +22,7 @@ class MSELoss(Loss):
                         yhat -> batch*d
                 sortie : res -> batch*d
         """
+
+        assert y.shape == yhat.shape
         return 2 * (y-yhat)
 

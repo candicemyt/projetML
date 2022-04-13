@@ -7,7 +7,6 @@ class TanH(Module):
 
 
     def forward(self, X):
-        print('X',X)
         return np.tanh(X)
 
     def update_parameters(self, gradient_step=1e-3):
@@ -35,5 +34,4 @@ class Sigmoide(Module):
         pass
 
     def backward_delta(self, input, delta):
-        #return delta * input * (1 - input)
-        return np.multiply((1/(1+np.exp(-input))*(1-1/1+np.exp(-input))),delta)
+        return delta * input * (1 - input)

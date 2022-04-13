@@ -26,6 +26,7 @@ class Module(object):
         """ met à jour les paramètres du module selon le gradient accumulé jusqu’à son appel
             avec un pas de gradient_step
         """
+
         self._parameters -= gradient_step*self._gradient
 
     def backward_update_gradient(self, input, delta):
