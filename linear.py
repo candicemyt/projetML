@@ -1,29 +1,5 @@
 import numpy as np
-from module import Loss
 from module import Module
-
-class MSELoss(Loss):
-    def __init__(self):
-        super().__init__()
-
-    def forward(self, y, yhat):
-        """ Calcul du coût aux moindres carrés (mse).
-                    entrées : y -> batch*d
-                            yhat -> batch*d
-                    sortie : res -> batch
-        """
-
-        assert y.shape[0] == yhat.shape[0]
-        res = np.linalg.norm(y-yhat) ** 2
-        return res
-
-    def backward(self, y, yhat):
-        """ Calcule le gradient du coût aux moindres carrés.
-                entrées : y -> batch*d
-                        yhat -> batch*d
-                sortie : res -> batch*d
-        """
-        return 2 * (y-yhat)
 
 
 class Linear(Module):
@@ -32,7 +8,7 @@ class Linear(Module):
         self.input = input
         self.output = output
         #on initialise la matrice de poids
-        self._parameters = np.random.rand(self.input)
+        self._parameters = np.random.rand(self.input, self.output)
         #on met le gradient à 0
         self.zero_grad()
 
@@ -46,11 +22,10 @@ class Linear(Module):
             entrée : X -> batch*input
             sortie : res -> batch*output
         """
+        print('X' ,X)
         assert X.shape[1] == self.input
 
-        X.reshape(self.input, -1)
-        res = X @ self._parameters
-        return res
+        return X @ self._parameters
 
     def backward_update_gradient(self, _input, delta):
         """ Met a jour le gradient
