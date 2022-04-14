@@ -13,8 +13,7 @@ class MSELoss(Loss):
         """
 
         assert y.shape[0] == yhat.shape[0]
-        res = np.linalg.norm(y-yhat) ** 2
-        return res
+        return np.linalg.norm(y-yhat) ** 2
 
     def backward(self, y, yhat):
         """ Calcule le gradient du coût aux moindres carrés.

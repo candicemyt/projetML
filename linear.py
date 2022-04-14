@@ -22,9 +22,7 @@ class Linear(Module):
             entrée : X -> batch*input
             sortie : res -> batch*output
         """
-
         assert X.shape[1] == self.input
-
         return X @ self._parameters
 
     def backward_update_gradient(self, _input, delta):
@@ -49,6 +47,5 @@ class Linear(Module):
                 sortie : res -> batch*input
         """
         assert delta.shape[1] == self._parameters.shape[1]
-
         return delta @ (self._parameters.T)
 
