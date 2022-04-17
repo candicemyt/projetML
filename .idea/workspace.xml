@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="tme8">
+    <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="BBL">
       <change afterPath="$PROJECT_DIR$/main_mltools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +32,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main_mltools.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="main_mltools" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="projetML" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -48,7 +49,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_mltools.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -71,7 +72,8 @@
       <workItem from="1648717604677" duration="5603000" />
       <workItem from="1648740701309" duration="36000" />
       <workItem from="1649423927140" duration="23000" />
-      <workItem from="1650032118141" duration="553000" />
+      <workItem from="1650032118141" duration="649000" />
+      <workItem from="1650211349954" duration="7069000" />
     </task>
     <task id="LOCAL-00001" summary="tme8">
       <created>1648723232639</created>
@@ -80,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648723232639</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="BBL">
+      <created>1650210886508</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650210886508</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,9 +108,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tme8" />
-    <option name="LAST_COMMIT_MESSAGE" value="tme8" />
+    <MESSAGE value="BBL" />
+    <option name="LAST_COMMIT_MESSAGE" value="BBL" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projetML$main.coverage" NAME="main Coverage Results" MODIFIED="1648722921459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/projetML$main_mltools.coverage" NAME="main_mltools Coverage Results" MODIFIED="1650218600505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
