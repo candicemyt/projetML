@@ -4,7 +4,9 @@ from nonlinear import *
 import numpy as np
 from mltools import plot_data, plot_frontiere, make_grid, gen_arti
 import matplotlib.pyplot as plt
-from encapsulage import Sequentiel
+from encapsulage import Sequentiel, Optim
+
+#todo faire marcher optim (loss très bizzare)
 
 #test de l'implémentation avec descente de gradient
 datax = np.random.random(size=(10,4))
@@ -16,12 +18,17 @@ lin1 = Linear(datax.shape[1], 5)
 lin2 = Linear(5, datay.shape[1])
 tanh = TanH()
 sigm = Sigmoide()
-seq = Sequentiel([lin1, tanh, lin2, sigm], mse)
+seq = Sequentiel([lin1, tanh, lin2, sigm])
+optim = Optim(seq, mse, 1e-7)
 val_mse = []
 for i in range(1000):
-     seq.forward(datax, datay)
-     seq.backward(datax, datay)
-     val_mse.append(seq.loss)
+     optim.step(datax, datay)
+     val_mse.append(optim.loss_values)
+
+     # seq.forward(datax)
+     # delta = mse.backward(datay, seq.outputs[-1])
+     # seq.backward(datax, delta)
+     #
 
 
 #      output1 = lin1.forward(datax)
@@ -45,7 +52,7 @@ for i in range(1000):
 # print(output4)
 # print(datay)
 
-
+print(val_mse[0])
 plt.plot(val_mse)
 plt.show()
 

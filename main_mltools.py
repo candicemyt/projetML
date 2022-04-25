@@ -3,9 +3,9 @@ from linear import Linear
 from mse import MSELoss
 import matplotlib.pyplot as plt
 
-#TO DO : loss croissante
+# todo: resoudre le probleme de loss croissante
 
-datax, datay = gen_arti(data_type=0,epsilon=0.1,nbex=1000)
+datax, datay = gen_arti(data_type=0,epsilon=0.3,nbex=1000)
 
 mse = MSELoss()
 lin = Linear(2, 1)
@@ -14,12 +14,12 @@ all_w = []
 
 for i in range(100):
     output = lin.forward(datax)
-    loss = mse.forward(output, datay).mean()
-    val_mse.append(loss)
     delta_mse = mse.backward(datay, output)
     lin.zero_grad()
     lin.backward_update_gradient(datax, delta_mse)
-    lin.update_parameters(gradient_step=1e-2)
+    lin.update_parameters(gradient_step=1e-4)
+    loss = mse.forward(output, datay).mean()
+    val_mse.append(loss)
     all_w.append(lin._parameters.copy())
 w_star=lin._parameters.copy()
 
