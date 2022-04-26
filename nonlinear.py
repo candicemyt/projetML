@@ -5,7 +5,6 @@ class TanH(Module):
     def __init__(self):
         super().__init__()
 
-
     def forward(self, X):
         return np.tanh(X)
 
@@ -16,9 +15,7 @@ class TanH(Module):
         pass
 
     def backward_delta(self, input, delta):
-        return delta * (1 - np.square(input))
-
-
+        return (1-self.forward(input)**2)*delta
 
 class Sigmoide(Module):
     def __init__(self):
@@ -34,4 +31,5 @@ class Sigmoide(Module):
         pass
 
     def backward_delta(self, input, delta):
-        return delta * input * (1 - input)
+        sig = self.forward(input)
+        return (sig * (1 - sig)) * delta

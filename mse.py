@@ -23,5 +23,5 @@ class MSELoss(Loss):
         """
 
         assert y.shape == yhat.shape
-        return 2 * (y-yhat)
+        return 2 * (yhat-y)
 

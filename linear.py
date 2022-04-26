@@ -14,7 +14,7 @@ class Linear(Module):
 
     def zero_grad(self):
         """Réinitialise à 0 le gradient"""
-        self._gradient = 0
+        self._gradient = np.zeros((self.input,self.output))
 
     def forward(self, X):
         """ Calcule la passe forward
