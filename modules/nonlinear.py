@@ -1,5 +1,5 @@
 import numpy as np
-from module import Module
+from modules.module import Module
 
 class TanH(Module):
     def __init__(self):
@@ -15,7 +15,7 @@ class TanH(Module):
         pass
 
     def backward_delta(self, input, delta):
-        return (1-self.forward(input)**2)*delta
+        return np.multiply((1-np.square(self.forward(input))),delta)
 
 class Sigmoide(Module):
     def __init__(self):
@@ -32,4 +32,4 @@ class Sigmoide(Module):
 
     def backward_delta(self, input, delta):
         sig = self.forward(input)
-        return (sig * (1 - sig)) * delta
+        return np.multiply(np.multiply(sig,(1 - sig)),delta)

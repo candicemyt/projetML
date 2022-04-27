@@ -1,4 +1,5 @@
-from mse import MSELoss
+import numpy as np
+
 
 class Sequentiel(object):
 
@@ -7,27 +8,18 @@ class Sequentiel(object):
         self.outputs = []
 
     def forward(self, datax):
+        self.outputs=[datax]
+        for m in self.modules:
+            self.outputs.append(m.forward(self.outputs[-1]))
 
-        self.outputs.append(self.modules[0].forward(datax))
-        for m in self.modules[1::]:
-            input = self.outputs[-1]
-            self.outputs.append(m.forward(input))
-
-    def backward(self, datax, delta):
-
-        inputs = self.outputs[::-1]
-        modules_bckw = self.modules[::-1]
-
-        for i in range(len(inputs) - 1):
-            modules_bckw[i].backward_update_gradient(inputs[i + 1], delta)
-            delta = modules_bckw[i].backward_delta(inputs[i + 1], delta)
-
-        modules_bckw[-1].backward_update_gradient(datax, delta)
-        modules_bckw[-1].backward_delta(datax, delta)
-        self.outputs = []
-        return inputs[0]
-
-
+    def backward(self, tmpDelta,eps):
+        for i in range(len(self.outputs) - 2, -1, -1):
+            module = self.modules[i]
+            delta = module.backward_delta(self.outputs[i], tmpDelta)
+            module.backward_update_gradient(self.outputs[i], tmpDelta)
+            module.update_parameters(gradient_step=eps)
+            module.zero_grad()
+            tmpDelta = delta
 
 class Optim(object):
 
@@ -39,13 +31,17 @@ class Optim(object):
 
     def step(self, datax, datay):
         self.net.forward(datax)
-        self.loss_values.append(self.loss.forward(self.net.outputs[-1], datay).mean())
-        delta = self.loss.backward(datay, self.net.outputs[-1])
-        self.net.backward(datax, delta)
-        for m in self.net.modules:
-            m.update_parameters(gradient_step=self.eps)
+        outputs = self.net.outputs
+        tmp_loss = self.loss.forward(datay, outputs[-1])
+        tmpDelta = self.loss.backward(datay, outputs[-1])
+        self.net.backward(tmpDelta, self.eps)
+        self.loss_values.append(tmp_loss.mean())
 
-# def sgd(net,datax,datay,batch_size,nb_iter):
-#     mse = MSELoss()
-#     opti=Optim(net,mse,1e-4)
-#     datax=datax.reshape(batch,len(datax)/batch)
+def SGD(net,datax,datay,batch_size,nb_iter,loss_fonction,eps):
+    op = Optim(net, loss_fonction, eps)
+    for epch in range(nb_iter):
+        indexes = np.random.randint(0, len(datax), batch_size)  # random sample
+        dataxb = np.array([datax[i] for i in indexes])
+        datayb = np.array([datay[i] for i in indexes])
+        op.step(dataxb, datayb)
+    return op.loss_values

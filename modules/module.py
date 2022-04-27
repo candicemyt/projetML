@@ -1,10 +1,3 @@
-class Loss(object):
-    def forward(self, y, yhat):
-        pass
-
-    def backward(self, y, yhat):
-        pass
-
 class Module(object):
     def __init__(self):
         #stocke les paramètres du module lorsqu’il en a

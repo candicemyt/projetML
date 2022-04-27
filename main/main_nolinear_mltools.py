@@ -1,8 +1,8 @@
-from linear import Linear
-from mse import MSELoss
-from nonlinear import *
+from modules.linear import Linear
+from loss.mse import MSELoss
+from modules.nonlinear import *
 import numpy as np
-from mltools import plot_data, plot_frontiere, make_grid, gen_arti
+from mltools import plot_data, plot_frontiere, gen_arti
 import matplotlib.pyplot as plt
 
 

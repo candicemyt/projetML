@@ -1,6 +1,6 @@
 from mltools import *
-from linear import Linear
-from mse import MSELoss
+from modules.linear import Linear
+from loss.mse import MSELoss
 import matplotlib.pyplot as plt
 
 datax, datay = gen_arti(data_type=0,epsilon=0.3,nbex=1000)
