@@ -2,6 +2,7 @@ import numpy as np
 from module import Loss
 
 class MSELoss(Loss):
+
     def __init__(self):
         super().__init__()
 
