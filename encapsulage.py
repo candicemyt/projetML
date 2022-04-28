@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class Sequentiel(object):
 
     def __init__(self, modules):
@@ -37,11 +36,22 @@ class Optim(object):
         self.net.backward(tmpDelta, self.eps)
         self.loss_values.append(tmp_loss.mean())
 
-def SGD(net,datax,datay,batch_size,nb_iter,loss_fonction,eps):
+def SGD(net, datax, datay, batch_size, nb_iter, loss_fonction, eps):
     op = Optim(net, loss_fonction, eps)
-    for epch in range(nb_iter):
-        indexes = np.random.randint(0, len(datax), batch_size)  # random sample
+    sum_loss=[]
+    indexes = np.arange(len(datax))
+    #on crée les batch de manière aléatoire
+    N_batch = len(datax) // batch_size
+    batchs=[]
+    for b in range(N_batch):
+        a=np.random.choice(indexes,batch_size)
+        indexes=np.setdiff1d(indexes,a)
         dataxb = np.array([datax[i] for i in indexes])
         datayb = np.array([datay[i] for i in indexes])
-        op.step(dataxb, datayb)
-    return op.loss_values
+        batchs.append((dataxb,datayb))
+
+    for i in range(nb_iter):
+        for (batchx,batchy) in batchs:
+            op.step(batchx, batchy)
+        sum_loss.append(np.mean(op.loss_values[i*N_batch:(i+1)*N_batch]))
+    return sum_loss

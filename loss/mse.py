@@ -1,5 +1,7 @@
 import numpy as np
-from loss import Loss
+
+from loss.loss import Loss
+
 
 class MSELoss(Loss):
 

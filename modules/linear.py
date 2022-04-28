@@ -3,9 +3,10 @@ from modules.module import Module
 
 
 class Linear(Module):
-    def __init__(self, input, output):
+    def __init__(self, input, output,biais=False):
         super().__init__()
-        self.input = input
+        self.biais = biais
+        self.input = input+int(biais)
         self.output = output
         #on initialise la matrice de poids
         self._parameters = np.random.rand(self.input, self.output)
@@ -22,6 +23,8 @@ class Linear(Module):
             entrée : X -> batch*input
             sortie : res -> batch*output
         """
+        if self.biais:
+            X=np.hstack((np.ones(X.shape[0]).reshape(-1, 1), X))
         assert X.shape[1] == self.input
         return X @ self._parameters
 
@@ -34,6 +37,8 @@ class Linear(Module):
                           delta -> batch*output
                 sortie : input*output
         """
+        if self.biais:
+            _input=np.hstack((np.ones(_input.shape[0]).reshape(-1, 1), _input))
         assert _input.shape[0] == delta.shape[0]
         self._gradient += _input.T @ delta
 

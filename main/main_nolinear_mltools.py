@@ -6,23 +6,17 @@ from mltools import plot_data, plot_frontiere, gen_arti
 import matplotlib.pyplot as plt
 
 
-def proj_biais(datax):
-    return np.hstack((np.ones(datax.shape[0]).reshape(-1, 1), datax))
-
-
-datax, datay = gen_arti(epsilon=0.1, data_type=1)
+datax, datay = gen_arti(epsilon=0.1, data_type=0)
 datay = datay.reshape(-1, 1)
 
-datax_biais = proj_biais(datax)
-
-lin1 = Linear(3, 10)
+lin1 = Linear(2, 10,biais=True)
 lin2 = Linear(10, 1)
 modu = [lin1, TanH(), lin2, Sigmoide()]
 n_iter = 1000
 eps = 1e-4
 loss = []
 for it in range(n_iter):
-    outputs = [datax_biais]
+    outputs = [datax]
     for mod in modu:
         outputs.append(mod.forward(outputs[-1]))
     tmp_loss = MSELoss().forward(datay, outputs[-1])
@@ -36,13 +30,10 @@ for it in range(n_iter):
         tmpDelta = delta
 
     loss.append(tmp_loss.mean())
-    # if it % 20 == 0:
-    #       print("iteration", it, "loss =", np.mean(loss))
 
 
 def predict(datax):
-    datax_b = proj_biais(datax)
-    outputs = [datax_b]
+    outputs = [datax]
     for mod in modu:
         outputs.append(mod.forward(outputs[-1]))
     return np.where(outputs[-1] > 0.5, 1, -1)
