@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="début part4" />
+    <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="...">
+      <change afterPath="$PROJECT_DIR$/data/USPS_test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/USPS_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/USPS_train.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/main_multiclass_mltools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main_encapsulage_mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_encapsulage_mltools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main_linear_mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_linear_mltools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main_nolinear_mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_nolinear_mltools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mltools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multi-classs.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,16 +48,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ML-projet-github" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tme4/tme4_bis.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\manon\Desktop\M1\ML\projetML\data" />
       <recent name="C:\Users\manon\Desktop\M1\ML\projetML\modules" />
       <recent name="C:\Users\manon\Desktop\M1\ML\projetML\Loss" />
       <recent name="C:\Users\Candice\Desktop\Cours\M1\Semestre2\ML\projetML\main" />
       <recent name="C:\Users\manon\Desktop\M1\ML\projetML" />
-      <recent name="C:\Users\manon\Desktop\M1\ML\projetML\main" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main_nolinear_mltools">
@@ -168,6 +179,8 @@
       <workItem from="1651075014090" duration="4013000" />
       <workItem from="1651147163617" duration="11848000" />
       <workItem from="1651224539416" duration="2799000" />
+      <workItem from="1651306970179" duration="57000" />
+      <workItem from="1651332411473" duration="977000" />
     </task>
     <task id="LOCAL-00001" summary="tme8">
       <created>1648723232639</created>
@@ -211,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651235063291</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="...">
+      <created>1651307009381</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651307009381</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +255,8 @@
     <MESSAGE value="part3 loss ok + réorganisation fichiers" />
     <MESSAGE value="part3 ok + début part4" />
     <MESSAGE value="début part4" />
-    <option name="LAST_COMMIT_MESSAGE" value="début part4" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projetML$main.coverage" NAME="main Coverage Results" MODIFIED="1648722921459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

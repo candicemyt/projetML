@@ -1,4 +1,4 @@
-from mltools import *
+from data.mltools import *
 from modules.linear import Linear
 from loss.mse import MSELoss
 import matplotlib.pyplot as plt

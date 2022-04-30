@@ -2,7 +2,7 @@ from modules.linear import Linear
 from loss.mse import MSELoss
 from modules.nonlinear import *
 import numpy as np
-from mltools import plot_data, plot_frontiere, gen_arti
+from data.mltools import plot_data, plot_frontiere, gen_arti
 import matplotlib.pyplot as plt
 
 

@@ -2,7 +2,7 @@ from encapsulage import *
 from modules.linear import *
 from loss.mse import *
 from modules.nonlinear import *
-from mltools import *
+from data.mltools import *
 
 datax, datay = gen_arti(epsilon=0.1, data_type=0)
 datay = datay.reshape(-1, 1)
