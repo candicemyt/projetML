@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="part3 ok + début part4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loss/ce.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/ce.py" afterDir="false" />
-    </list>
+    <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="début part4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +167,7 @@
       <workItem from="1651061494117" duration="959000" />
       <workItem from="1651075014090" duration="4013000" />
       <workItem from="1651147163617" duration="11848000" />
-      <workItem from="1651224539416" duration="2738000" />
+      <workItem from="1651224539416" duration="2799000" />
     </task>
     <task id="LOCAL-00001" summary="tme8">
       <created>1648723232639</created>
@@ -207,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651161423249</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="début part4">
+      <created>1651235063291</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651235063291</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +234,8 @@
     <MESSAGE value="main linear avec mltools" />
     <MESSAGE value="part3 loss ok + réorganisation fichiers" />
     <MESSAGE value="part3 ok + début part4" />
-    <option name="LAST_COMMIT_MESSAGE" value="part3 ok + début part4" />
+    <MESSAGE value="début part4" />
+    <option name="LAST_COMMIT_MESSAGE" value="début part4" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projetML$main.coverage" NAME="main Coverage Results" MODIFIED="1648722921459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
