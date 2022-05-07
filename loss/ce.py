@@ -1,7 +1,7 @@
 import numpy as np
 from loss.loss import Loss
 
-def SoftMax(X):
+def Softmax(X):
     q = 1 / np.sum(np.exp(X), axis=1)
     p = np.exp(X)
     return p * q[:, None]
@@ -13,8 +13,8 @@ class SMCELoss(Loss):
         super().__init__()
 
     def forward(self, y, yhat):
-        tmp = SoftMax(yhat)
+        tmp = Softmax(yhat)
         return -(tmp*y)+np.log(np.sum(np.exp(tmp)))
 
     def backward(self, y, yhat):
-        return SoftMax(yhat)-y
+        return Softmax(yhat)-y

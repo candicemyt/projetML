@@ -14,8 +14,8 @@ if __name__ =="__main__":
     uspsdatatest = "../data/USPS_test.txt"
     alltrainx, alltrainy = load_usps(uspsdatatrain)
     alltestx, alltesty = load_usps(uspsdatatest)
-    datax,datay=get_usps([0,1,2,3,4,5,6,7,8,9],alltrainx,alltrainy)
-    testx, testy = get_usps([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], alltestx, alltesty)
+    datax,datay=get_usps([0,1],alltrainx,alltrainy)
+    testx, testy = get_usps([0,1], alltestx, alltesty)
     datay = OneHotEncoder(sparse=False).fit_transform(datay.reshape(-1, 1))
     print(len(datax))
     testy = OneHotEncoder(sparse=False).fit_transform(testy.reshape(-1, 1))
@@ -24,9 +24,8 @@ if __name__ =="__main__":
     lin2 = Linear(256, 10)
     seq = Sequentiel([lin1,ReLu(),lin2,TanH()])
     n_iter = 100
-    eps = 1e-4
-    #loss = SGD(seq, datax, datay, 100, n_iter, SMCELoss(), eps)
-    loss = SGD(seq, datax, datay, 100, n_iter, MSELoss(), eps)
+    eps = 1e-3
+    loss = SGD(seq, datax, datay, 100, n_iter, SMCELoss(), eps)
 
     plt.figure()
     plt.plot(loss)
