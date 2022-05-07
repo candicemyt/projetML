@@ -22,3 +22,4 @@ def get_usps(l, datax, datay):
 
 def show_usps(data):
     plt.imshow(data.reshape((16, 16)), interpolation="nearest", cmap="gray")
+    plt.show()

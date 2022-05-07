@@ -4,7 +4,7 @@ from loss.mse import *
 from modules.nonlinear import *
 from data.mltools import *
 
-datax, datay = gen_arti(epsilon=0.1, data_type=0)
+datax, datay = gen_arti(epsilon=0.1, data_type=1)
 datay = datay.reshape(-1, 1)
 
 lin1 = Linear(2, 10,biais=True)

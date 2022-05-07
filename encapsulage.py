@@ -44,14 +44,17 @@ def SGD(net, datax, datay, batch_size, nb_iter, loss_fonction, eps):
     N_batch = len(datax) // batch_size
     batchs=[]
     for b in range(N_batch):
-        a=np.random.choice(indexes,batch_size)
+        a=np.random.choice(indexes,batch_size,replace=False)
         indexes=np.setdiff1d(indexes,a)
-        dataxb = np.array([datax[i] for i in indexes])
-        datayb = np.array([datay[i] for i in indexes])
+        dataxb = np.array([datax[i] for i in a])
+        datayb = np.array([datay[i] for i in a])
         batchs.append((dataxb,datayb))
 
     for i in range(nb_iter):
+
         for (batchx,batchy) in batchs:
             op.step(batchx, batchy)
         sum_loss.append(np.mean(op.loss_values[i*N_batch:(i+1)*N_batch]))
+        if i%(nb_iter//10)==0:
+            print("interation ",i," : ",np.mean(op.loss_values[i*N_batch:(i+1)*N_batch]))
     return sum_loss

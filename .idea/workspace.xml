@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/data/USPS_test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/USPS_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/USPS_train.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/main_multiclass_mltools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/divers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/convolution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/USPS_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/USPS_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encapsulage.py" beforeDir="false" afterPath="$PROJECT_DIR$/encapsulage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/ce.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/ce.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main_encapsulage_mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_encapsulage_mltools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main_linear_mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_linear_mltools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main_nolinear_mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_nolinear_mltools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mltools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multi-classs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main_multiclass_mltools.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_multiclass_mltools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tme4/tme4_bis.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ML-projet-github" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -60,23 +58,23 @@
       <recent name="C:\Users\manon\Desktop\M1\ML\projetML" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main_nolinear_mltools">
-    <configuration name="main test" type="PythonConfigurationType" factoryName="Python">
+  <component name="RunManager" selected="Python.main_encapsulage_mltools">
+    <configuration name="divers" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="projetML" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Candice\AppData\Local\Programs\Python\Python310\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="SDK_HOME" value="C:\Users\manon\AppData\Local\Programs\Python\Python310\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/divers.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -127,6 +125,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_multiclass_mltools" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="projetML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\manon\AppData\Local\Programs\Python\Python310\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/main_multiclass_mltools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main_nolinear_mltools" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="projetML" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,7 +170,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main test" />
+      <item itemvalue="Python.main_multiclass_mltools" />
+      <item itemvalue="Python.divers" />
       <item itemvalue="Python.main_linear_mltools" />
       <item itemvalue="Python.main_nolinear_mltools" />
       <item itemvalue="Python.main_encapsulage_mltools" />
@@ -180,7 +201,12 @@
       <workItem from="1651147163617" duration="11848000" />
       <workItem from="1651224539416" duration="2799000" />
       <workItem from="1651306970179" duration="57000" />
-      <workItem from="1651332411473" duration="977000" />
+      <workItem from="1651332411473" duration="1101000" />
+      <workItem from="1651479686328" duration="10000" />
+      <workItem from="1651480882530" duration="2535000" />
+      <workItem from="1651514493742" duration="10000" />
+      <workItem from="1651758679023" duration="7666000" />
+      <workItem from="1651851280184" duration="7417000" />
     </task>
     <task id="LOCAL-00001" summary="tme8">
       <created>1648723232639</created>
@@ -231,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651307009381</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="...">
+      <created>1651333409136</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651333409136</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,9 +293,11 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projetML$main.coverage" NAME="main Coverage Results" MODIFIED="1648722921459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/projetML$divers.coverage" NAME="divers Coverage Results" MODIFIED="1651914771547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/projetML$main_nolinear_mltools.coverage" NAME="main_nolinear_mltools Coverage Results" MODIFIED="1651158776090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/projetML$main_multiclass_mltools.coverage" NAME="main_multiclass_mltools Coverage Results" MODIFIED="1651917751266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/projetML$main_mltools.coverage" NAME="main_linear_mltools Coverage Results" MODIFIED="1650993855484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/projetML$main_linear_mltools.coverage" NAME="main_linear_mltools Coverage Results" MODIFIED="1651069756992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
-    <SUITE FILE_PATH="coverage/projetML$main_encapsulage_mltools.coverage" NAME="main_encapsulage_mltools Coverage Results" MODIFIED="1651158642684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/projetML$main_encapsulage_mltools.coverage" NAME="main_encapsulage_mltools Coverage Results" MODIFIED="1651918179650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
   </component>
 </project>
