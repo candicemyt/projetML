@@ -1,8 +1,10 @@
+import numpy as np
+
 class Module(object):
     def __init__(self):
-        #stocke les paramètres du module lorsqu’il en a
+        # stocke les paramètres du module lorsqu’il en a
         self._parameters = None
-        #accumule le gradient calculé
+        # accumule le gradient calculé
         self._gradient = None
 
     def zero_grad(self):
@@ -19,7 +21,6 @@ class Module(object):
         """ met à jour les paramètres du module selon le gradient accumulé jusqu’à son appel
             avec un pas de gradient_step
         """
-
         self._parameters -= gradient_step*self._gradient
 
     def backward_update_gradient(self, input, delta):

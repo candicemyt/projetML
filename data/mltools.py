@@ -1,5 +1,7 @@
 import numpy as np
+#from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
+from matplotlib import cm
 
 
 def plot_data(data,labels=None):
@@ -9,8 +11,6 @@ def plot_data(data,labels=None):
     :param labels: vecteur des labels (discrets)
     :return:
     """
-    if labels is not None:
-        labels = labels.reshape(-1)
     cols,marks = ["red", "green", "blue", "orange", "black", "cyan"],[".","+","*","o","x","^"]
     if labels is None:
         plt.scatter(data[:,0],data[:,1],marker="x")
@@ -79,4 +79,4 @@ def gen_arti(centerx=1,centery=1,sigma=0.1,nbex=1000,data_type=0,epsilon=0.02):
     idx = np.random.permutation((range(y.size)))
     data=data[idx,:]
     y=y[idx]
-    return data,y.reshape(-1, 1)
+    return data,y

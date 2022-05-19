@@ -1,26 +1,31 @@
 import numpy as np
+
 from loss.Loss import Loss
+from modules.SoftMax import Softmax
 
 
-class MSELoss(Loss):
+class SoftMax_CELoss(Loss):
 
     def __init__(self):
         super().__init__()
 
     def forward(self, y, yhat):
-        """ Calcul du coût aux moindres carrés (mse).
+        """ Calcul du coût cross entropique avec un softMax passé au logarithme.
             entrées : y -> batch*d
                     yhat -> batch*d
             sortie : res -> batch
         """
         assert y.shape == yhat.shape
-        return np.linalg.norm((y-yhat),axis=1)**2
+        yhat = Softmax().forward(yhat)
+        return np.sum(-(y * np.log(yhat)), axis=1)
 
     def backward(self, y, yhat):
-        """ Calcule le gradient du coût aux moindres carrés.
+        """ Calcule le gradient.
                 entrées : y -> batch*d
                         yhat -> batch*d
                 sortie : res -> batch*d
         """
         assert y.shape == yhat.shape
-        return np.multiply(2,yhat-y)
+        nz = np.nonzero(y)
+        yhat[nz] -= 1
+        return yhat
