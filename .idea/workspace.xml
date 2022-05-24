@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="avancement softmax (pb loss constante)">
+    <list default="true" id="cdab4247-b0bf-42d8-bafa-4da69ef5ba19" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/out/dataviz_linear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/dataviz_nonlinear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/loss_linear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/loss_multiclass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/loss_nonlinear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/matconf_multiclass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projetML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetML.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loss/SMce.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/smce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encapsulage.py" beforeDir="false" afterPath="$PROJECT_DIR$/encapsulage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main_linear.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_linear.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main_multiclass.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_multiclass.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main_nolinear.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_nolinear.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Sigmoide.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/sigmoide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/SoftMax.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/softMax.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/TanH.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/tanH.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +63,29 @@
       <recent name="C:\Users\manon\Desktop\M1\ML\projetML" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main_nolinear">
+    <configuration name="main_linear" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="projetML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Candice\AppData\Local\Programs\Python\Python310\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/main_linear.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main_multiclass" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="projetML" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,9 +93,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Candice\AppData\Local\Programs\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -80,6 +108,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_nolinear" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="projetML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Candice\AppData\Local\Programs\Python\Python310\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/main_nolinear.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main_linear" />
+      <item itemvalue="Python.main_nolinear" />
+      <item itemvalue="Python.main_multiclass" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -113,7 +168,6 @@
       <workItem from="1651851280184" duration="7578000" />
       <workItem from="1651918718301" duration="5320000" />
       <workItem from="1653393183456" duration="48000" />
-      <workItem from="1653393752835" duration="791000" />
     </task>
     <task id="LOCAL-00001" summary="tme8">
       <created>1648723232639</created>
@@ -194,6 +248,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tme8" />
@@ -207,15 +262,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="avancement softmax (pb loss constante)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/projetML$main.coverage" NAME="main Coverage Results" MODIFIED="1648722921459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/projetML$main_2class_USPS.coverage" NAME="main_2class_USPS Coverage Results" MODIFIED="1651920199967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/projetML$main_nolinear.coverage" NAME="main_nolinear Coverage Results" MODIFIED="1653399800746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/projetML$divers.coverage" NAME="divers Coverage Results" MODIFIED="1651914771547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/projetML$main_nolinear_mltools.coverage" NAME="main_nolinear_mltools Coverage Results" MODIFIED="1651158776090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
-    <SUITE FILE_PATH="coverage/projetML$main_multiclass_mltools.coverage" NAME="main_multiclass_mltools Coverage Results" MODIFIED="1651917751266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
-    <SUITE FILE_PATH="coverage/projetML$main_nolinear.coverage" NAME="main_multiclass Coverage Results" MODIFIED="1653394068066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
-    <SUITE FILE_PATH="coverage/projetML$main_mltools.coverage" NAME="main_linear_mltools Coverage Results" MODIFIED="1650993855484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/projetML$main_multiclass.coverage" NAME="main_multiclass Coverage Results" MODIFIED="1653397948809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/projetML$main_linear_mltools.coverage" NAME="main_linear_mltools Coverage Results" MODIFIED="1651069756992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/projetML$main_encapsulage_mltools.coverage" NAME="main_encapsulage_mltools Coverage Results" MODIFIED="1651926309075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/projetML$main_multiclass_mltools.coverage" NAME="main_multiclass_mltools Coverage Results" MODIFIED="1651917751266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/projetML$main.coverage" NAME="main Coverage Results" MODIFIED="1648722921459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/projetML$main_multiclass_USPS.coverage" NAME="main_multiclass_USPS Coverage Results" MODIFIED="1651929682835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/projetML$main_nolinear_mltools.coverage" NAME="main_nolinear_mltools Coverage Results" MODIFIED="1651158776090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/projetML$main_2class_USPS.coverage" NAME="main_2class_USPS Coverage Results" MODIFIED="1651920199967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/projetML$main_mltools.coverage" NAME="main_linear_mltools Coverage Results" MODIFIED="1650993855484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/projetML$main_linear.coverage" NAME="main_linear Coverage Results" MODIFIED="1653398298209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
   </component>
 </project>

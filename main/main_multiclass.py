@@ -36,6 +36,7 @@ plt.figure()
 plt.xlabel("nombre d'itération")
 plt.ylabel('cout')
 plt.plot(range(1, n_iter+1),loss)
+plt.savefig('../out/loss_multiclass.png')
 plt.show()
 
 ## Visualisation de la matrice de confusion
@@ -44,6 +45,7 @@ print('matrice de confusion : ',mat)
 plt.figure()
 plt.title("matrice de confusion")
 plt.imshow(mat)
+plt.savefig('../out/matconf_multiclass.png')
 plt.show()
 
 idx = np.random.choice(len(alltestx), 4)

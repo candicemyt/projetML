@@ -46,8 +46,8 @@ def mini_SGD(net, datax, datay ,batch_size, nb_iteration , loss_fonction , eps =
             tmp_loss = opt.step(x,y)
             loss.append(tmp_loss)
         sum_loss.append(np.mean(loss))
-        if it % 20 == 0:
-            print("iteration", it, "loss =", np.mean(loss))
+        #if it % 20 == 0:
+            #print("iteration", it, "loss =", np.mean(loss))
 
          
     return net, sum_loss
