@@ -4,8 +4,8 @@ from sklearn.metrics import confusion_matrix
 
 from data.mltools import gen_arti, plot_data, plot_frontiere
 from encapsulage import Sequentiel, mini_SGD
-from loss.Mse import MSELoss
-from modules.Linear import Linear
+from loss.mse import MSELoss
+from modules.linear import Linear
 
 datax, datay = gen_arti(epsilon=0.3,data_type=0)
 datay = datay.reshape(-1, 1)
