@@ -1,14 +1,13 @@
 import numpy as np
+from modules.module import Module
 
-from modules.Module import Module
 
-
-class Sigmoide(Module):
+class TanH(Module):
     def __init__(self):
         super().__init__()
 
-    def forward(self, X):
-        return 1 / (1 + np.exp(-X))
+    def forward(self, x):
+        return np.tanh(x)
 
     def update_parameters(self, gradient_step=1e-3):
         pass
@@ -18,5 +17,4 @@ class Sigmoide(Module):
 
     def backward_delta(self, input, delta):
         assert input.shape == delta.shape
-        sig = self.forward(input)
-        return np.multiply(np.multiply(sig, (1 - sig)), delta)
+        return np.multiply((1 - np.square(self.forward(input))),delta)

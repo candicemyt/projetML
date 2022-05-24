@@ -4,10 +4,10 @@ from sklearn.metrics import confusion_matrix
 
 from data.mltools import gen_arti, plot_frontiere, plot_data
 from encapsulage import Sequentiel, mini_SGD
-from loss.Mse import MSELoss
-from modules.Linear import Linear
-from modules.Sigmoide import Sigmoide
-from modules.TanH import TanH
+from loss.mse import MSELoss
+from modules.linear import Linear
+from modules.sigmoide import Sigmoide
+from modules.tanH import TanH
 
 
 def proj_biais(datax):

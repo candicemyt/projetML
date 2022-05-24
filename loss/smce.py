@@ -1,7 +1,7 @@
 import numpy as np
 
-from loss.Loss import Loss
-from modules.SoftMax import Softmax
+from loss.loss import Loss
+from modules.softMax import Softmax
 
 
 class SoftMax_CELoss(Loss):

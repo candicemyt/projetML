@@ -4,9 +4,9 @@ from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
 from data.USPS_tools import load_usps
 from encapsulage import Sequentiel, mini_SGD
-from loss.SMce import SoftMax_CELoss
-from modules.Linear import Linear
-from modules.TanH import TanH
+from loss.smce import SoftMax_CELoss
+from modules.linear import Linear
+from modules.tanH import TanH
 
 uspsdatatrain = "../data/USPS_train.txt"
 uspsdatatest = "../data/USPS_test.txt"
