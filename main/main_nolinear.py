@@ -13,23 +13,23 @@ from modules.tanH import TanH
 def proj_biais(datax):
     return np.hstack((np.ones(datax.shape[0]).reshape(-1,1),datax))
 
-datax, datay = gen_arti(epsilon=0.1,data_type=1)
-datay = datay.reshape(-1,1)
-datay_train = np.where(datay==-1,0,1)
-datax_train = proj_biais(datax)
-print(datax_train.shape)
+datax_train, datay_train = gen_arti(epsilon=0.3, data_type=1)
+datay_train = datay_train.reshape(-1, 1)
+datay_train_01 = np.where(datay_train == -1, 0, 1)
+datax_train_biais = proj_biais(datax_train)
 
-datax, datay = gen_arti(epsilon=0.1,data_type=1)
-datay = datay.reshape(-1,1)
-datay_test = np.where(datay==-1,0,1)
-datax_test = proj_biais(datax)
+datax_test, datay_test = gen_arti(epsilon=0.5, data_type=1)
+datay_test = datay_test.reshape(-1, 1)
+datay_test_01 = np.where(datay_test == -1, 0, 1)
+datax_test_biais = proj_biais(datax_test)
+
 
 lin1 = Linear(3, 10)
 lin2 = Linear(10, 1)
 ae = Sequentiel([lin1,TanH(),lin2,Sigmoide()])
 n_iter = 1000
 ep = 1e-4
-seq, loss = mini_SGD(ae, datax_train, datay_train, batch_size=1000, eps=ep, loss_fonction=MSELoss(), nb_iteration=n_iter)
+seq, loss = mini_SGD(ae, datax_train_biais, datay_train_01, batch_size=1000, eps=ep, loss_fonction=MSELoss(), nb_iteration=n_iter)
 
 
 def predict(datax):
@@ -38,23 +38,21 @@ def predict(datax):
     return np.where(outputs[-1] > 0.5, 1, -1)
 
 yhat_train=predict(datax_train)
-print('taux de bonne classif train: ',np.mean(yhat_train == datay_train))
+print('accuracy train : ', np.mean(yhat_train == datay_train))
 
 yhat_test=predict(datax_test)
-print('taux de bonne classif test : ',np.mean(yhat_test == datay_test))
+print('accuracy test : ', np.mean(yhat_test == datay_test))
 
 plt.figure()
 plt.plot(range(1,n_iter+1),loss)
 plt.xlabel("nombre d'itération")
 plt.ylabel('cout')
-plt.savefig('../out/loss_nonlinear.png')
 plt.show()
 
 plt.figure()
 plt.title('No linear')
-plot_frontiere(datax_test,lambda x : predict(x),step=100)
-plot_data(datax_test,datay_test.reshape(-1))
-plt.savefig('../out/dataviz_nonlinear.png')
+plot_frontiere(datax_test, lambda x : predict(x), step=100)
+plot_data(datax_test, datay_test.reshape(-1))
 plt.show()
 
 ## Visualisation de la matrice de confusion
