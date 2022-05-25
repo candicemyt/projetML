@@ -12,7 +12,7 @@ uspsdatatrain = "../data/USPS_train.txt"
 uspsdatatest = "../data/USPS_test.txt"
 alltrainx,alltrainy = load_usps(uspsdatatrain)
 alltestx,alltesty = load_usps(uspsdatatest)
-alltrainy = OneHotEncoder(sparse = False).fit_transform(alltrainy.reshape(-1,1))
+alltrainy_oh = OneHotEncoder(sparse = False).fit_transform(alltrainy.reshape(-1,1))
 
 alltrainx = MinMaxScaler().fit_transform(alltrainx)
 alltestx = MinMaxScaler().fit_transform(alltestx)
@@ -24,13 +24,17 @@ seq = Sequentiel([lin1,TanH(),lin2,TanH()])
 n_iter = 1000
 eps = 1e-4
 
-seq, loss = mini_SGD(seq,alltrainx, alltrainy, batch_size=100, eps=eps, loss_fonction = SoftMax_CELoss(), nb_iteration=n_iter)
+seq, loss = mini_SGD(seq,alltrainx, alltrainy_oh, batch_size=100, eps=eps, loss_fonction = SoftMax_CELoss(), nb_iteration=n_iter)
+
+
+outputs = seq.forward(alltrainx)
+yhat_train = np.argmax(outputs[-1], axis=1)
+print('accuracy classif train : ',np.mean(yhat_train == alltrainy))
 
 outputs = seq.forward(alltestx)
+yhat_test = np.argmax(outputs[-1], axis=1)
+print('accuracy classif test : ',np.mean(yhat_test == alltesty))
 
-yhat = np.argmax(outputs[-1], axis=1)
-
-print('taux de bonne classif : ',np.mean(yhat == alltesty))
 
 plt.figure()
 plt.xlabel("nombre d'itération")
@@ -40,7 +44,7 @@ plt.savefig('../out/loss_multiclass.png')
 plt.show()
 
 ## Visualisation de la matrice de confusion
-mat=confusion_matrix(alltesty, yhat)
+mat=confusion_matrix(alltesty, yhat_test)
 print('matrice de confusion : ',mat)
 plt.figure()
 plt.title("matrice de confusion")
@@ -52,7 +56,8 @@ idx = np.random.choice(len(alltestx), 4)
 k=1
 for i in idx:
     plt.figure()
-    plt.title('y: '+str(alltesty[i])+' yhat :'+str(yhat[i]))
+    plt.title('y: '+str(alltesty[i])+' yhat :'+str(yhat_test[i]))
     plt.imshow(alltestx[i].reshape(16,16))
+    plt.savefig(f'../out/predvstrue{i}_multiclass.png')
     plt.show()
     k += 1

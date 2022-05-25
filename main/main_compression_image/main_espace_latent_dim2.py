@@ -10,18 +10,18 @@ from modules.linear import Linear
 from modules.sigmoide import Sigmoide
 from modules.tanH import TanH
 
-uspsdatatrain = "../../../data/USPS_train.txt"
-uspsdatatest = "../../../data/USPS_test.txt"
+uspsdatatrain = "./../../data/USPS_train.txt"
+uspsdatatest = "./../../data/USPS_test.txt"
 alltrainx,alltrainy = load_usps(uspsdatatrain)
 alltestx,alltesty = load_usps(uspsdatatest)
 alltrainy = OneHotEncoder(sparse = False).fit_transform(alltrainy.reshape(-1,1))
 
 alltrainx = MinMaxScaler().fit_transform(alltrainx)
 alltestx = MinMaxScaler().fit_transform(alltestx)
-lin1 = Linear(256, 100)
-lin2 = Linear(100, 10)
-lin3 = Linear(10, 100)
-lin4 = Linear(100, 256)
+lin1 = Linear(256, 50)
+lin2 = Linear(50, 2)
+lin3 = Linear(2, 50)
+lin4 = Linear(50, 256)
 
 seq = Sequentiel([lin1,TanH(),lin2,TanH(),lin3,TanH(),lin4,Sigmoide()])
 
@@ -36,13 +36,13 @@ for i in idx:
     plt.figure()
     plt.title('image originale de '+str(alltesty[i]))
     plt.imshow(alltestx[i].reshape(16,16))
-    plt.savefig(f'../out/compression_dim10_100_originale{i}')
+    plt.savefig(f'./out/compression_dim2_originale{i}')
     plt.show()
     Xhat = seq.forward(alltestx)[-1]
     plt.figure()
     plt.title('image reconstruite de ' + str(alltesty[i]))
     plt.imshow(Xhat[i].reshape(16,16))
-    plt.savefig(f'../out/compression_dim10_100_reconstruite{i}')
+    plt.savefig(f'./out/compression_dim2_reconstruite{i}')
     plt.show()
 
 plt.figure()

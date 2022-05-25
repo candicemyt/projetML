@@ -25,7 +25,7 @@ lin4 = Linear(50, 256)
 
 seq = Sequentiel([lin1,TanH(),lin2,TanH(),lin3,TanH(),lin4,Sigmoide()])
 
-n_iter = 100
+n_iter = 1000
 eps = 1e-4
 
 seq, loss = mini_SGD(seq,alltrainx, alltrainx, batch_size=100, eps=eps, loss_fonction = BCELoss(), nb_iteration=n_iter)
@@ -36,11 +36,13 @@ for i in idx:
     plt.figure()
     plt.title('image originale de '+str(alltesty[i]))
     plt.imshow(alltestx[i].reshape(16,16))
+    plt.savefig(f'../out/compression_dim10_50_originale{i}')
     plt.show()
     Xhat = seq.forward(alltestx)[-1]
     plt.figure()
     plt.title('image reconstruite de ' + str(alltesty[i]))
     plt.imshow(Xhat[i].reshape(16,16))
+    plt.savefig(f'../out/compression_dim10_50_reconstruite{i}')
     plt.show()
 
 plt.figure()

@@ -36,10 +36,12 @@ for i in idx:
     plt.figure()
     plt.title('image originale de '+str(alltesty[i]))
     plt.imshow(alltestx[i].reshape(16,16))
+    plt.savefig(f'../out/compression_dim5_50_originale{i}')
     plt.show()
     Xhat = seq.forward(alltestx)[-1]
     plt.figure()
     plt.title('image reconstruite de ' + str(alltesty[i]))
+    plt.savefig(f'../out/compression_dim5_50_reconstruite{i}')
     plt.imshow(Xhat[i].reshape(16,16))
     plt.show()
 
@@ -47,6 +49,7 @@ plt.figure()
 plt.xlabel("nombre d'itération")
 plt.ylabel('cout')
 plt.plot(range(1, n_iter+1),loss)
+plt.savefig(f'../out/compression_dim5_50_loss')
 plt.show()
 
 km = KMeans(n_clusters=10)
