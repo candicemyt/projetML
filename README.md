@@ -11,7 +11,7 @@ Librairie permettant l'implémentation de réseaux de neurones (style PyTorch) a
   
   
 ### Rapport
-Le rapport complet est disponible : rapport.pdf
+Le rapport complet est disponible : rapport_ML.pdf
 
 
 
